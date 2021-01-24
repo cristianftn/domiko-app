@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'paginaPrincipal.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,15 +8,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          /* appBar: AppBar(
-            title: Text('Demo app'),
-            centerTitle: true,
-          ),*/
-          body: WebView(
-        initialUrl: 'https://amzmagicstories.com/',
-        javascriptMode: JavascriptMode.unrestricted,
-      )),
+      theme: ThemeData(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => PaginaPrincipal(),
+      },
     );
   }
 }
